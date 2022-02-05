@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+}
+
+.container > div {
+  margin: 0px !important;
+  border: 1px solid #adadad;
+}
+
+.heading {
+  width: 20%;
+}
+
+#mocha {
+  width: 80%;
+}
+
+.heading > ul {
+  padding: 0 10px;
+  max-height: 94.5vh;
+  overflow-y: scroll;
+}
+
+.heading ul li {
+  list-style: none;
+  margin: 5px 0;
+  padding: 5px 0;
+  background-color: #3cf1f1;
+}
