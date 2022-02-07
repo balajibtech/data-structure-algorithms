@@ -9,24 +9,26 @@
 //   anagrams('lol', 'lolc') --> False
 
 function anagrams(stringA, stringB) {
-  stringA = stringA.trim().replace(/[\W]/,''),
-  stringB = stringB.trim().replace(/[\W]/,'');
+  stringA = stringA.replace(/[\W]/,'').toLowerCase().split(''),
+  stringB = stringB.replace(/[\W]/,'').toLowerCase().split('');
   
-  if(stringA.length !== stringA.length) return false; 
-
-  let arrayA = {}, arrayB = {};
-  stringA.split('').map((value)=>{
-    if(!arrayA[value])
-      arrayA[value] = 0;
+  if(stringA.length !== stringB.length) return false; 
+  
+  let diff = {};
+  stringA.map((value) => {
+    if(!diff[value])
+      diff[value] = 1;
     else
-      arrayA[value]++;
+      diff[value]++;
   });
-  stringB.split('').map((value)=>{
-    if(!arrayB[value])
-      arrayB[value] = 0;
+  
+  for(let i in stringB) {
+    let value = stringB[i];
+    if(!diff[value])
+      return false;
     else
-      arrayB[value]++;
-  });
+      diff[value]--;
+  }
   return true;
 }
 
