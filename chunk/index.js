@@ -7,8 +7,19 @@
 // chunk([0, 1, 2, 3, 4, 5], 4) -->  [[0, 1, 2, 3], [4, 5]]
 
 function chunk(array, size) {
-  
+  let res = [], i = 0;
+  array.map((value, index)=>{
+    if(index > 0 && index % size == 0)
+      i++;
+    if(!res[i])
+      res.push([value]);
+    else
+      res[i].push(value);
+  });
+  return res;
 }
+// Time complexity: O(N), We go over every item in input array
+// Space complexity: O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

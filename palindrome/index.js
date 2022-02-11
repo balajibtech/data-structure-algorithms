@@ -5,28 +5,15 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
-/**
- * @param {number} x
- * @return {boolean}
- */
-//  var isPalindrome = function(x) {
-//   if(x < 0 || typeof x !== 'number' || (x%10==0 && x!=0))
-//       return false;
-//   if(x < 10)
-//       return true;
-//   let reverse = 0;
-//   while(x > reverse) {
-//       reverse = parseInt((reverse*10) + (x%10));
-//       x = parseInt(x/10);
-//   }
-//   return x === reverse || x === parseInt(reverse/10);
-// };
-// Complexity Analysis
-
-// Time complexity : O(log_{10}(n))O(log 10 (n)). 
-// We divided the input by 10 for every iteration, so the time complexity is O(\log_{10}(n))O(log10(n))
-// Space complexity : O(1)O(1).
+function palindrome(str) {
+  str = str.toLowerCase();
+  // return str === str.reverse();
+  return str === str.split('').reduce((previouValue,currentValue)=>{
+		previouValue = currentValue + previouValue;
+		return previouValue;
+	},"");
+}
+// Time complexity : O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

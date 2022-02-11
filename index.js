@@ -16,6 +16,7 @@ const list = [
     {"dir":"merge","name":"Merge"},
     {"dir":"oddsGreaterThan100","name":"Odds Greated Than 100"},
     {"dir":"palindrome","name":"Palindrome"},
+    {"dir":"palindromeInt","name":"Palindrome Integer"},
     {"dir":"priorityQueue","name":"Priority Queue"},
     {"dir":"pyramid","name":"Pyramid"},
     {"dir":"queue","name":"Queue"},
@@ -43,7 +44,7 @@ function loaded(url) {
 (function(){
     const listContainer = document.getElementById("list");
     const dir = window.location.search.replace("?","");
-    let file = './twoSum.js';
+    let file = 'anagrams/index.js';
     list.map((value)=>{
         value.file = value.file ? value.file : "index.js";
         value.file = value.dir+"/"+value.file;

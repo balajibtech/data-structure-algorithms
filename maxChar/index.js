@@ -3,7 +3,22 @@
 // maxChar("I loveeeeeee noodles") === "e"
 // maxChar("1337") === "3"
 
-function maxChar(str) {}
+function maxChar(str) {
+  const letters = str.replace(/\W/,"").toLowerCase().split('');
+  let count = {}, max=0, char = '';
+
+  letters.map((value,index)=>{
+    if(!count[value])
+      count[value] = 0
+    count[value]++;
+
+    if(max < count[value]) {
+      max = count[value];
+      char = value;
+    }
+  });
+  return char;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

@@ -13,7 +13,28 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+  // Solution 1:
+  // for(let i=1; i<=n; i++) {
+  //   const hash = "#".repeat(i * 2 - 1);
+  //   const padding = " ".repeat(n-i);
+  //   console.log(padding + hash + padding);
+  // }
+
+  // Solution 2:
+  for(let i=1; i<=n; i++) {
+    let hash = '',padding = '';
+    for(let j = 0; j<(i*2-1); j++) {
+      hash += '#';
+    }
+    for(let k = 0; k<n-i; k++) {
+      padding += ' ';
+    }
+    console.log(padding + hash + padding);
+  }
+}
+
+//Time complexity: O(N^2) Outer loop runs for N times, Inner loop runs roughly N times.
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

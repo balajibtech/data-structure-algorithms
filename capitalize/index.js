@@ -7,9 +7,11 @@
 
 function capitalize(str) {
   return str.toLowerCase().split(' ').map((value) => {
-    return value.substring(0,1).toUpperCase() + value.slice(1);
+    return value[0].toUpperCase() + value.slice(1);
   }).join(' ');
 }
+
+//Time Complexity: O(N)
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
