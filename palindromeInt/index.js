@@ -11,7 +11,7 @@
  */
 
 function palindrome(x) {
-  //To check: Type = Number, Only positive number, No ending with 0, Not a float number
+  //To check: Type = Num, Only +ve num, No ending with 0, Not a float
   if(typeof x !== 'number' || x < 0 || (x%10==0 && x!=0) || x%1!==0)
     return false;
   if(x < 10)
@@ -28,6 +28,12 @@ function palindrome(x) {
 // Time complexity : O(log_{10}(n))O(log 10 (n)). 
 // We divided the input by 10 for every iteration, so the time complexity is O(\log_{10}(n))O(log10(n))
 // Space complexity : O(1).
+const complexity = {
+	"time": "O(log_{10}(n)). We divided the input by 10 for every iteration, so the time complexity is O(log10(n))",
+	"space": "O(1)"
+};
+
+loadScript(palindrome,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

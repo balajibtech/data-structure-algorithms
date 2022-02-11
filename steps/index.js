@@ -16,7 +16,34 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  // Solution 1:
+  for(let i=1; i<=n; i++) {
+    let step = "";
+    for(let j=0; j<i; j++) {
+      step += "#";
+    }
+    for(let k=0; k<n-i; k++) {
+      step += " ";
+    }
+    console.log(step);
+  }
+
+  // Solution 2:
+  // for(let i=1; i<=n; i++) {
+  //   let step = "#".repeat(i);
+  //   step += " ".repeat(n-i);
+  //   console.log(step);
+  // }
+}
+
+//Time complexity: O(N^2), Both Inner and Outer loop For loops run N times.
+const complexity = {
+  "time": "O(N^2), Both Inner and Outer loop For loops run N times.",
+  "space": ""
+};
+
+loadScript(steps,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

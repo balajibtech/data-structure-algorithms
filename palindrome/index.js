@@ -7,13 +7,22 @@
 
 function palindrome(str) {
   str = str.toLowerCase();
-  // return str === str.reverse();
+  //Solution 1:
+  // return str === str.split('').reverse().join('');
+
+  //Solution 2:
   return str === str.split('').reduce((previouValue,currentValue)=>{
 		previouValue = currentValue + previouValue;
 		return previouValue;
 	},"");
 }
 // Time complexity : O(N)
+const complexity = {
+	"time": "O(n)",
+	"space": ""
+};
+
+loadScript(palindrome,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

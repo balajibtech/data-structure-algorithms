@@ -20,6 +20,12 @@ function chunk(array, size) {
 }
 // Time complexity: O(N), We go over every item in input array
 // Space complexity: O(N)
+const complexity = {
+	"time": "O(N), We go over every item in input array",
+	"space": "O(N)"
+};
+
+loadScript(chunk,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

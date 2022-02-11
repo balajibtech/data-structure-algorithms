@@ -9,6 +9,12 @@ function oddsGreaterThan100(num) {
     num += 1;
   return num;
 }
+const complexity = {
+	"time": "O(1)",
+	"space": "O(1)"
+};
+
+loadScript(oddsGreaterThan100,complexity);
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/

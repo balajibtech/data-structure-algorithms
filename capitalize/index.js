@@ -12,6 +12,12 @@ function capitalize(str) {
 }
 
 //Time Complexity: O(N)
+const complexity = {
+	"time": "O(N)",
+	"space": ""
+};
+
+loadScript(capitalize,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

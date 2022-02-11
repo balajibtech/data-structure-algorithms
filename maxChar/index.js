@@ -7,10 +7,8 @@ function maxChar(str) {
   const letters = str.replace(/\W/,"").toLowerCase().split('');
   let count = {}, max=0, char = '';
 
-  letters.map((value,index)=>{
-    if(!count[value])
-      count[value] = 0
-    count[value]++;
+  letters.map((value)=>{
+    count[value] = count[value]+1 || 1;
 
     if(max < count[value]) {
       max = count[value];
@@ -19,6 +17,15 @@ function maxChar(str) {
   });
   return char;
 }
+
+//Time Complexity: O(N), We visit every character in input string
+//Space complexity: O(1) Character cout obj will have at most 26 Key-val pairs
+const complexity = {
+	"time": "O(N), We visit every character in input string",
+	"space": "O(1) Character cout obj will have at most 26 Key-val pairs"
+};
+
+loadScript(maxChar,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

@@ -35,6 +35,12 @@ function pyramid(n) {
 }
 
 //Time complexity: O(N^2) Outer loop runs for N times, Inner loop runs roughly N times.
+const complexity = {
+	"time": "O(N^2) Outer loop runs for N times, Inner loop runs roughly N times.",
+	"space": ""
+};
+
+loadScript(pyramid,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

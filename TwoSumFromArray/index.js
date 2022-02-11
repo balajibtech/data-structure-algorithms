@@ -14,16 +14,6 @@
 // };
 
 // var twoSum = function(nums, target) {
-//     let len = nums.length;
-//     for(let i=0;i<len;i++) {
-//         let remaining = target - nums[i];
-//         let index = nums.indexOf(remaining,i+1);
-//         if(index > -1) return [i,index]
-//     }
-//     return [];
-// };
-
-// var twoSum = function(nums, target) {
 //     var hash = {};
 //     for (let i = 0; i < nums.length; i++) {
 //         var num = target - nums[i];
@@ -41,12 +31,33 @@ var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         const diff = target - nums[i];
         secondIndex = nums.indexOf(diff,i+1);
-        if (secondIndex != i) {
+        if (secondIndex > -1) {
             firstIndex = i;
             break;
         }
-        temp[nums[i]] = i;
     }
     return [firstIndex, secondIndex]
 };
-console.log(twoSum([1,2,4,2],6));
+
+const complexity = {
+  "time": "O(N)",
+  "space": "O(1)"
+};
+
+loadScript(twoSum,complexity);
+
+mocha.setup("bdd");
+const { assert } = chai;
+
+describe("Two sum", () => {
+  it("Shortest index", () => {
+    assert.deepEqual(twoSum([1,2,4,2],6), [1,2]);
+    assert.deepEqual(twoSum([1,2,4,2],6), [1,2]);
+  });
+  it("Shortest index with negative", () => {
+    assert.deepEqual(twoSum([-1,-2,4,2],6), [2,3]);
+    assert.deepEqual(twoSum([1,-2,4,2],3), [0,3]);
+  });
+});
+
+mocha.run();

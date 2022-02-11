@@ -41,6 +41,12 @@ function loaded(url) {
     document.getElementsByTagName("body")[0].appendChild(element);
 }
 
+function loadScript(func, complexity) {
+    document.getElementById('code').innerHTML = func.toString().replace(/\n/g,"<br>");
+    document.getElementById('time').innerHTML = complexity.time;
+    document.getElementById('space').innerHTML = complexity.space || '-';
+}
+
 (function(){
     const listContainer = document.getElementById("list");
     const dir = window.location.search.replace("?","");

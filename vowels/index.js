@@ -7,7 +7,34 @@
 //   vowels('aEiOu') --> 5
 //   vowels('I am a world-class developer using iterations') --> 16
 
-function vowels(str) {}
+function vowels(str) {
+  const letters = "aeiou";
+  let count = 0;
+  // Solution 1:
+  // str.toLowerCase().split('').map((value)=>{
+  //   if(letters.indexOf(value) > -1)
+  //     count++;
+  // });
+  // return count;
+
+  // Solution 2:
+  letters.split('').map((vowel)=>{
+    str.toLowerCase().split('').map((value)=>{
+      if(vowel === value)
+        count++;
+    });
+  })
+  return count;
+}
+
+//Time Complexity: O(5N) => O(N), All characters of input string must be checked to see if it is a vowel.
+//Space Complexity: O(1)
+const complexity = {
+  "time": "O(5N) => O(N), All characters of input string must be checked to see if it is a vowel.",
+  "space": "O(1)"
+};
+
+loadScript(vowels,complexity);
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

@@ -8,18 +8,34 @@
 //   reverseInt(-100) === -1
 
 function reverseInt(n) {
-  if(x < 0 || typeof x !== 'number')
-      return false;
-  if(x < 10)
-      return true;
-  let y = 0, temp = x;
-  while(temp>=1) {
-      y = parseInt((y*10) + (temp%10));
-      temp = temp/10;
-  }
-  return y;
+  // Solution 1:
+  // let y = 0,isNegative = false;
+  // if(n < 0) {
+  //   n *= -1;
+  //   isNegative = true;
+  // }
+  // while(n > 0) {
+  //   y = parseInt((y*10) + (n%10));
+  //   n = parseInt(n/10);
+  // }
+  // if(isNegative)
+  //   y *= -1;
+  // return y;
+
+  //Solution 2:
+  let reverse = parseInt(n.toString().split('').reverse().join(''));
+  if(n < 0)
+    reverse = 0 - reverse;
+  return reverse;
 }
 
+// Time complexity:  O(log N), If input increases by factor of 10, we do one more operation
+const complexity = {
+	"time": "O(log N), If input increases by factor of 10, we do one more operation",
+	"space": ""
+};
+
+loadScript(reverseInt,complexity);
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
 //    ) (   | (    \/| (    \/   ) (     | (    \/| (   ) || (    \/| (    \/| (    \/
